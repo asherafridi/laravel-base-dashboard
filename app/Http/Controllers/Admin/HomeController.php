@@ -17,19 +17,20 @@ use Illuminate\View\View;
 class HomeController extends Controller
 {
     //
-    public function index(){
+    public function index()
+    {
         $title = "Dashboard";
-        $widget['total_properties']=Properties::count();
-        $widget['total_members']=User::count();
-        $widget['total_committee']=Committee::count();
-        $widget['total_vendor']=Vendor::count();
-        $widget['total_work_orders']=WorkOrder::count();
-        $widget['work_orders']=WorkOrder::get();
-        $widget['bills']=Transaction::get();
-        $widget['total_bills']=Transaction::count();
-        $widget['total_bill_amount']=Transaction::sum('amount');
-        $widget['announcements']=Announcement::get();
+        $widget['widget_1'] = 0;
+        $widget['widget_2'] = 0;
+        $widget['widget_3'] = 0;
+        $widget['widget_4'] = 0;
+        $widget['total_work_orders'] = 0;
+        $widget['work_orders'] = 0;
+        $widget['bills'] = 0;
+        $widget['total_bills'] = 0;
+        $widget['total_bill_amount'] = 0;
+        $widget['announcements'] = 0;
         // return $widget;
-        return view('admin.dashboard',compact('title','widget'));
+        return view('admin.dashboard', compact('title', 'widget'));
     }
 }

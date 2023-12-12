@@ -14,8 +14,8 @@
                                 <i class='bx bx-home' style="font-size: 48px;"></i>
                             </div>
                         </div>
-                        <span class="fw-semibold d-block mb-1">Total Properties</span>
-                        <h3 class="card-title mb-2">{{ $widget['total_properties'] }}</h3>
+                        <span class="fw-semibold d-block mb-1">Widget 1</span>
+                        <h3 class="card-title mb-2">{{ $widget['widget_1'] }}</h3>
                     </div>
                 </div>
             </div>
@@ -27,8 +27,8 @@
                                 <i class='bx bx-user' style="font-size: 48px;"></i>
                             </div>
                         </div>
-                        <span class="fw-semibold d-block mb-1">Total Board Members</span>
-                        <h3 class="card-title mb-2">{{ $widget['total_members'] }}</h3>
+                        <span class="fw-semibold d-block mb-1">Widget 2</span>
+                        <h3 class="card-title mb-2">{{ $widget['widget_2'] }}</h3>
                     </div>
                 </div>
             </div>
@@ -40,8 +40,8 @@
                                 <i class='bx bx-group' style="font-size: 48px;"></i>
                             </div>
                         </div>
-                        <span class="fw-semibold d-block mb-1">Total Committees</span>
-                        <h3 class="card-title mb-2">{{ $widget['total_committee'] }}</h3>
+                        <span class="fw-semibold d-block mb-1">Widget 3</span>
+                        <h3 class="card-title mb-2">{{ $widget['widget_3'] }}</h3>
                     </div>
                 </div>
             </div>
@@ -53,8 +53,8 @@
                                 <i class='bx bx-group' style="font-size: 48px;"></i>
                             </div>
                         </div>
-                        <span class="fw-semibold d-block mb-1">Total Vendors</span>
-                        <h3 class="card-title mb-2">{{ $widget['total_vendor'] }}</h3>
+                        <span class="fw-semibold d-block mb-1">Widget 4</span>
+                        <h3 class="card-title mb-2">{{ $widget['widget_4'] }}</h3>
                     </div>
                 </div>
             </div>
@@ -64,26 +64,26 @@
 
 
         <div class="row">
-          <!-- Order Statistics -->
-          <div class="col-md-6 col-lg-4 col-xl-4 order-0 mb-4">
-              <div class="card h-100">
-                  <div class="card-header d-flex align-items-center justify-content-between pb-0">
-                      <div class="card-title mb-4">
-                          <h5 class="m-0 me-2">Work Orders</h5>
-                          {{-- <small class="text-muted">42.82k Total Sales</small> --}}
-                      </div>
-                  </div>
-                  <div class="card-body">
-                      <div class="d-flex justify-content-between align-items-center mb-3">
-                          <div class="d-flex flex-column align-items-left gap-1">
-                              <h2 class="mb-0">{{$widget['total_work_orders']}}</h2>
-                              <span>Total Work Orders</span>
-                          </div>
-                          {{-- <div id="orderStatisticsChart"></div> --}}
-                      </div>
-                      <hr>
-                      <ul class="p-0 m-0">
-                        @foreach ($widget['work_orders'] as $item)
+            <!-- Order Statistics -->
+            <div class="col-md-6 col-lg-4 col-xl-4 order-0 mb-4">
+                <div class="card h-100">
+                    <div class="card-header d-flex align-items-center justify-content-between pb-0">
+                        <div class="card-title mb-4">
+                            <h5 class="m-0 me-2">Work Orders</h5>
+                            {{-- <small class="text-muted">42.82k Total Sales</small> --}}
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <div class="d-flex flex-column align-items-left gap-1">
+                                <h2 class="mb-0">{{ $widget['total_work_orders'] }}</h2>
+                                <span>Total Work Orders</span>
+                            </div>
+                            {{-- <div id="orderStatisticsChart"></div> --}}
+                        </div>
+                        <hr>
+                        <ul class="p-0 m-0">
+                            {{-- @foreach ($widget['work_orders'] as $item)
                         <li class="d-flex mb-4 pb-1">
                             <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
                                 <div class="me-2">
@@ -96,50 +96,50 @@
                             </div>
                         </li>
                             
-                        @endforeach
-                      </ul>
-                  </div>
-              </div>
-          </div>
-          <!--/ Order Statistics -->
+                        @endforeach --}}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!--/ Order Statistics -->
             <!-- Order Statistics -->
             <div class="col-md-6 col-lg-4 col-xl-4 order-0 mb-4">
-              <div class="card h-100">
-                  <div class="card-header d-flex align-items-center justify-content-between pb-0">
-                      <div class="card-title mb-4">
-                          <h5 class="m-0 me-2">Bills</h5>
-                          <small class="text-muted">{{$widget['total_bill_amount']}} Amount</small>
-                      </div>
-                  </div>
-                  <div class="card-body">
-                      <div class="d-flex justify-content-between align-items-center mb-3">
-                          <div class="d-flex flex-column align-items-left gap-1">
-                              <h2 class="mb-0">{{$widget['total_bills']}}</h2>
-                              <span>Total Bills</span>
-                          </div>
-                          {{-- <div id="orderStatisticsChart"></div> --}}
-                      </div>
-                      <hr>
-                      <ul class="p-0 m-0">
-                        @foreach ($widget['bills'] as $item)
-                        <li class="d-flex mb-4 pb-1">
-                            <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                                <div class="me-2">
-                                    <h6 class="mb-0">{{$item->description}}</h6>
-                                    <small class="text-muted">{{$item->user() ? $item->user()->name : 'No User'}}</small>
-                                </div>
-                                <div class="user-progress">
-                                    <small class="fw-semibold">{{$item->amount}}</small>
-                                </div>
+                <div class="card h-100">
+                    <div class="card-header d-flex align-items-center justify-content-between pb-0">
+                        <div class="card-title mb-4">
+                            <h5 class="m-0 me-2">Bills</h5>
+                            <small class="text-muted">{{ $widget['total_bill_amount'] }} Amount</small>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <div class="d-flex flex-column align-items-left gap-1">
+                                <h2 class="mb-0">{{ $widget['total_bills'] }}</h2>
+                                <span>Total Bills</span>
                             </div>
-                        </li>
-                            
-                        @endforeach
-                      </ul>
-                  </div>
-              </div>
-          </div>
-          <!--/ Order Statistics -->
+                            {{-- <div id="orderStatisticsChart"></div> --}}
+                        </div>
+                        <hr>
+                        <ul class="p-0 m-0">
+                            {{-- @foreach ($widget['bills'] as $item)
+                                <li class="d-flex mb-4 pb-1">
+                                    <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                                        <div class="me-2">
+                                            <h6 class="mb-0">{{ $item->description }}</h6>
+                                            <small
+                                                class="text-muted">{{ $item->user() ? $item->user()->name : 'No User' }}</small>
+                                        </div>
+                                        <div class="user-progress">
+                                            <small class="fw-semibold">{{ $item->amount }}</small>
+                                        </div>
+                                    </div>
+                                </li>
+                            @endforeach --}}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!--/ Order Statistics -->
 
 
             <!-- Transactions -->
@@ -150,20 +150,19 @@
                     </div>
                     <div class="card-body">
                         <ul class="p-0 m-0">
-                          @foreach ($widget['announcements'] as $item)
-                          <li class="d-flex mb-4 pb-1">
-                              <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                                  <div class="me-2">
-                                      <small class="text-muted d-block mb-1">{{$item->title}}</small>
-                                      <h6 class="mb-0">{{$item->description}}</h6>
-                                  </div>
-                                  <div class="user-progress d-flex align-items-center gap-1">
-                                      <h6 class="mb-0">{{date("d-M-Y", strtotime($item->date))}}</h6>
-                                  </div>
-                              </div>
-                          </li>
-                              
-                          @endforeach
+                            {{-- @foreach ($widget['announcements'] as $item)
+                                <li class="d-flex mb-4 pb-1">
+                                    <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                                        <div class="me-2">
+                                            <small class="text-muted d-block mb-1">{{ $item->title }}</small>
+                                            <h6 class="mb-0">{{ $item->description }}</h6>
+                                        </div>
+                                        <div class="user-progress d-flex align-items-center gap-1">
+                                            <h6 class="mb-0">{{ date('d-M-Y', strtotime($item->date)) }}</h6>
+                                        </div>
+                                    </div>
+                                </li>
+                            @endforeach --}}
                         </ul>
                     </div>
                 </div>

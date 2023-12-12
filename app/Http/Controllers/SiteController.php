@@ -15,9 +15,7 @@ class SiteController extends Controller
     public function home()
     {
         $title = "Home";
-        $vendor = Vendor::limit(4)->get();
-        $gallery = Gallery::limit(4)->get();
-        return view('frontend.basic.home', compact('title', 'vendor', 'gallery'));
+        return $title;
     }
     public function reset()
     {
